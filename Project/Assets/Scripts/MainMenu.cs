@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,5 +22,6 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         highscore.text = ("Highscore = " + (EndScreen.highScore * 1f).ToString("f2"));
+        Application.targetFrameRate = 60;
     }
 }

@@ -18,6 +18,10 @@ public class Health : MonoBehaviour
     public AudioSource ouch;
     public AudioSource roadOuch;
 
+    //handles immunity frames too
+    public float iFramePeriod;
+    public bool iFrameState = false;
+
 
     void Start()
     {
@@ -26,15 +30,19 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(!iFrameState)
         {
-            ouch.Play();
-            damage -= 20f;
-            UpdateBar();
-        }
-        if (collision.gameObject.tag == "Hazard")
-        {
-            roadOuch.Play();
+            if(collision.gameObject.tag == "Enemy")
+            {
+                ouch.Play();
+                damage -= 20f;
+                UpdateBar();
+                StartCoroutine(IFrame()); //triggers invul period
+            }
+            if (collision.gameObject.tag == "Hazard")
+            {
+                roadOuch.Play();
+            }
         }
     }
 
@@ -67,6 +75,15 @@ public class Health : MonoBehaviour
         }
         
        
+    }
+
+    IEnumerator IFrame()
+    {
+        iFrameState = true;
+
+        yield return new WaitForSeconds(iFramePeriod);
+
+        iFrameState = false;
     }
 
     void UpdateBar()

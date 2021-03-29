@@ -1094,6 +1094,8 @@ MonoBehaviour:
   timeText: {fileID: 1991986191}
   ouch: {fileID: 1553670462}
   roadOuch: {fileID: 1553670464}
+  iFramePeriod: 1
+  iFrameState: 0
 --- !u!50 &1553670461
 Rigidbody2D:
   serializedVersion: 4

@@ -29,7 +29,7 @@ public class MooseSound : MonoBehaviour
         m3 = (AudioSource)gameObject.AddComponent(typeof (AudioSource));
         m4 = (AudioSource)gameObject.AddComponent(typeof (AudioSource));
         m5 = (AudioSource)gameObject.AddComponent(typeof (AudioSource));
-        m6 = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
+        m6 = (AudioSource)gameObject.AddComponent(typeof (AudioSource));
 
         /*
         clip1 = GameObject.Find("cow") as AudioClip;
@@ -61,12 +61,12 @@ public class MooseSound : MonoBehaviour
         m5.playOnAwake = false;
         m6.playOnAwake = false;
 
-        m1.volume = .5f;
-        m2.volume = .5f;
-        m3.volume = .5f;
-        m4.volume = .5f;
-        m5.volume = .5f;
-        m6.volume = .5f;
+        m1.volume = .3f;
+        m2.volume = .3f;
+        m3.volume = .3f;
+        m4.volume = .3f;
+        m5.volume = .3f;
+        m6.volume = .3f;
 
 
     }

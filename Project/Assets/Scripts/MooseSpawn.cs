@@ -24,6 +24,7 @@ public class MooseSpawn : MonoBehaviour
         if (spawntimer >= spawnEveryN)
         {
             mooseSelector = Random.Range(1, 6);
+            //mooseSelector = 4; //for debug
             if (mooseSelector == 1)
             {
                 Debug.Log("moose 1 selected");
